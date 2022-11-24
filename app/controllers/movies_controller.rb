@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
-  before_action :set_authors, only: %i[ new edit create update]
-
+  before_action :set_authors, only: %i[ new edit create update ]
   # GET /movies or /movies.json
   def index
     @movies = Movie.all
@@ -9,7 +8,7 @@ class MoviesController < ApplicationController
 
   # GET /movies/1 or /movies/1.json
   def show
-    
+    #@movie.comments.build
   end
 
   # GET /movies/new
@@ -71,8 +70,8 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:title, :year, {
-        author_ids: []
-      }, comments_attributes: [:id, :body])
+      params.require(:movie).permit(:title, :year,
+        { author_ids: [] }, 
+        comments_attributes: [:id, :body])
     end
 end

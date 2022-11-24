@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :logs
   resources :comments, only: [:index, :update]
   resources :authors
   resources :movies
