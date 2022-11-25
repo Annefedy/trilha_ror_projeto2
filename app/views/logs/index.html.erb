@@ -5,10 +5,6 @@
 <div id="logs">
   <% @logs.each do |log| %>
     <%= render log %>
-    <p>
-      <%= link_to "Show this log", log %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New log", new_log_path %>

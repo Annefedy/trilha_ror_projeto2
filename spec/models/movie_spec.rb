@@ -13,14 +13,3 @@ RSpec.describe Movie, type: :model do
     expect(subject).to_not be_valid
   end
 end
-
-it 'é válido com texto e filme associado' do
-  review = Review.new
-  review.comment = 'Primeiro comentario'
-  review.movie = 'Movie 1'
-
-  expect(review).to be_valid  
-end
-
-end
-
